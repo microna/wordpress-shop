@@ -1,0 +1,68 @@
+/*
+Theme name: Shop
+Theme URI: www.google.com
+Author: Stas
+Author URI: wordpress.org
+Description: Shop theme
+Version: 1.0
+Text-domain: shop
+License URI: wordpress.com
+Tags: shop 
+*/
+
+
+
+.main-menu{
+    padding: 0;
+}
+
+.main-menu ul{
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 0;
+}
+
+.main-menu ul li{
+    display: inline;
+    margin: 0 5px 0 0;
+}
+
+.main-menu ul li:last-child{
+    margin: 0;
+}
+
+.footer-menu ul, .footer-widgets ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+.footer-menu ul li{
+    display: inline;
+    margin: 0 10px 0 0;
+}
+
+.footer-menu ul li:last-child{
+    margin: 0;
+}
+
+.footer-menu ul li a{
+    color: #949393;
+    text-decoration: none;
+}
+
+.footer-menu ul li.current-menu-item a{
+    color: #ff9292;
+}
+
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
