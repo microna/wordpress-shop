@@ -9,6 +9,8 @@
  */
 
  require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+ require_once get_template_directory() . '/inc/customizer.php';
+
 
 /**
 * Enqueue scripts and styles.
@@ -22,6 +24,10 @@ function shop_scripts(){
  	wp_enqueue_style( 'shop-style', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.css' ), 'all' );
 
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900');
+
+	wp_enqueue_script('flexslider-min-js', get_template_directory_uri() . '/inc/flexslider/jquery.flexslider-min.js', array('jquery'), '', true);
+	wp_enqueue_script('flexslider-js', get_template_directory_uri() . '/inc/flexslider/flexslider.js', array('jquery'), '', true);
+	wp_enqueue_style('flexslider-css', get_template_directory_uri() . '/inc/flexslider/flexslider.css', array(), '', 'all');
  }
  add_action( 'wp_enqueue_scripts', 'shop_scripts' );
 
@@ -58,6 +64,15 @@ function shop_config(){
 		add_theme_support( 'wc-product-gallery-zoom' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
+		add_theme_support('custom-logo', array(
+			'height' => 16,
+			'width' => 325,
+			'flex_height' => true,
+			'flex_width' => true,
+		));
+		add_theme_support('post-thumbnails');
+		add_image_size('shop-slider', 550, 380, array('center', 'center'));
+		add_image_size('shop-blog', 960, 640, array('center', 'center'));
 
 		if ( ! isset( $content_width ) ) {
 			$content_width = 600;
